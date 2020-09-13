@@ -28,6 +28,15 @@ namespace graphics_task_1
 
         public void DrawForm(Graphics g)
         {
+            const float startWidth = 1000;
+            const float startHeight = 700;
+
+            float width = this.ClientSize.Width;
+            float height = this.ClientSize.Height;
+
+            float xProportion = width / startWidth;
+            float yProportion = height / startHeight;
+
             /*brushes and pens*/
             Pen blackPen_1 = new Pen(Color.Black, 1);
             Pen blackPen_2 = new Pen(Color.Black, 2);
@@ -171,6 +180,8 @@ namespace graphics_task_1
             g.FillEllipse(yellowBrush, drawSunRect);
             g.DrawEllipse(lightYellowPen_3, drawSunRect);
             /*******************/
+
+            //Rectangle drawTreeLeavesRect = new Rectangle((int)(xProportion*765), (int)(yProportion * 170), (int)(xProportion * 200), (int)(yProportion * 250));
         }
 
         private void Form1_Resize(object sender, EventArgs e)
