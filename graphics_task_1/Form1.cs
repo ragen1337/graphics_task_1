@@ -33,7 +33,8 @@ namespace graphics_task_1
             Pen blackPen_1 = new Pen(Color.Black, 1);
             Pen blackPen_2 = new Pen(Color.Black, 2);
             Pen blackPen_6 = new Pen(Color.Black, 6);
-            //Pen greenPen_3 = new Pen(Color.Green, 3);
+            Pen greenPen_3 = new Pen(Color.Green, 3);
+            Pen lightYellowPen_3 = new Pen(Color.LightYellow, 3);
 
 
             Brush blueSolidBrush = new SolidBrush(Color.Blue);
@@ -42,6 +43,9 @@ namespace graphics_task_1
 
             Brush greenYellowSolidBrush = new SolidBrush(Color.GreenYellow);
             Brush greenSolidBrush = new SolidBrush(Color.Green);
+            Brush seaGreenBrush = new SolidBrush(Color.SeaGreen);
+
+            Brush yellowBrush = new SolidBrush(Color.Yellow);
 
             Brush saddleBrownBrush = new SolidBrush(Color.SaddleBrown);
             Brush sandyBrownBrush = new SolidBrush(Color.SandyBrown);
@@ -151,6 +155,22 @@ namespace graphics_task_1
 
             g.FillPolygon(brownBrush, roofPoints);
             g.DrawPolygon(blackPen_2, roofPoints);
+            /*******************/
+
+            /*tree*/
+            Rectangle drawTreeRect = new Rectangle(850, 325, 30, 200);
+            g.FillRectangle(saddleBrownBrush, drawTreeRect);
+            g.DrawRectangle(blackPen_2, drawTreeRect);
+
+            Rectangle drawTreeLeavesRect = new Rectangle(765, 170, 200, 250);
+            g.FillEllipse(seaGreenBrush, drawTreeLeavesRect);
+            g.DrawEllipse(greenPen_3, drawTreeLeavesRect);
+            /*******************/
+
+            /*sun*/
+            Rectangle drawSunRect = new Rectangle(850, 20, 100, 100);
+            g.FillEllipse(yellowBrush, drawSunRect);
+            g.DrawEllipse(lightYellowPen_3, drawSunRect);
             /*******************/
         }
     }
