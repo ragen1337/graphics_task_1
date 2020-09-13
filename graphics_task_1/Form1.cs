@@ -173,7 +173,7 @@ namespace graphics_task_1
             /*******************/
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
+        private void Form1_Resize(object sender, PaintEventArgs e)
         {
             Graphics g = CreateGraphics();
             DrawForm(g);
