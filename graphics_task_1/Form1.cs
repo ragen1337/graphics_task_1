@@ -20,15 +20,14 @@ namespace graphics_task_1
             this.Height = 700;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+            DrawForm(g);
+        }
 
+        public void DrawForm(Graphics g)
+        {
             /*brushes and pens*/
             Pen blackPen_1 = new Pen(Color.Black, 1);
             Pen blackPen_2 = new Pen(Color.Black, 2);
@@ -51,7 +50,7 @@ namespace graphics_task_1
             Brush sandyBrownBrush = new SolidBrush(Color.SandyBrown);
             Brush brownBrush = new SolidBrush(Color.Brown);
 
-            
+
             FillMode newFillMode = FillMode.Winding;
             /*******************/
 
@@ -126,7 +125,7 @@ namespace graphics_task_1
 
             for (byte i = 1; i <= 6; i++)
             {
-                Rectangle drawHouseWallPlanksRect = new Rectangle(250, 250, 450, 50*i);
+                Rectangle drawHouseWallPlanksRect = new Rectangle(250, 250, 450, 50 * i);
                 g.DrawRectangle(blackPen_1, drawHouseWallPlanksRect);
             }
 
@@ -172,6 +171,12 @@ namespace graphics_task_1
             g.FillEllipse(yellowBrush, drawSunRect);
             g.DrawEllipse(lightYellowPen_3, drawSunRect);
             /*******************/
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            Graphics g = CreateGraphics();
+            DrawForm(g);
         }
     }
 }
